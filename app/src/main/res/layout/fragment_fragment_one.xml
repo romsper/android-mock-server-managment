@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              android:padding="20dp"
+              tools:context=".fragment.FragmentOne">
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            android:weightSum="2">
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_weight="1"
+                android:text="Want HTTPS mock"/>
+
+        <android.support.v7.widget.SwitchCompat
+                android:id="@+id/secure_switch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_weight="1"/>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+        <android.support.v7.widget.AppCompatSpinner
+                android:id="@+id/method_spinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:entries="@array/httpMethodList"/>
+
+        <android.support.design.widget.TextInputEditText
+                android:id="@+id/path_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Input path"/>
+
+    </LinearLayout>
+
+    <android.support.design.widget.TextInputEditText
+            android:id="@+id/json_input_mock"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textMultiLine"
+            android:lines="15"
+            android:gravity="top"
+            android:hint="Put JSON for Mock"/>
+
+    <Button
+            android:id="@+id/send_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_radius"
+            android:textColor="@color/colorAccent"
+            android:onClick="onClickMock"
+            android:text="Send"/>
+
+</LinearLayout>
