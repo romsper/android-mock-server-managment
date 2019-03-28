@@ -5,24 +5,22 @@
               android:layout_height="match_parent"
               android:orientation="vertical"
               android:padding="20dp"
-              tools:context=".fragment.FragmentOne">
+              tools:context=".fragment.FragmentCreate">
 
     <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:visibility="gone"
-            android:weightSum="2">
+            android:orientation="horizontal">
 
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="start"
                 android:layout_weight="1"
-                android:text="Want HTTPS mock"/>
+                android:text="Is mock secure:"/>
 
-        <android.support.v7.widget.SwitchCompat
-                android:id="@+id/secure_switch"
+        <Switch
+                android:id="@+id/switch_secure"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"
@@ -36,36 +34,35 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-        <android.support.v7.widget.AppCompatSpinner
-                android:id="@+id/method_spinner"
+        <Spinner
+                android:id="@+id/spinner_method"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:entries="@array/httpMethodList"/>
 
         <android.support.design.widget.TextInputEditText
-                android:id="@+id/path_input"
+                android:id="@+id/input_path"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Input path"/>
+                android:hint="URL path"/>
 
     </LinearLayout>
 
     <android.support.design.widget.TextInputEditText
-            android:id="@+id/json_input_mock"
+            android:id="@+id/input_mock_body"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
             android:inputType="textMultiLine"
-            android:lines="15"
             android:gravity="top"
-            android:hint="Put JSON for Mock"/>
+            android:hint="Mock body"/>
 
     <Button
-            android:id="@+id/send_button"
+            android:id="@+id/btn_send_mock"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/button_radius"
             android:textColor="@color/colorAccent"
-            android:onClick="onClickMock"
-            android:text="Send"/>
+            android:text="SEND"/>
 
 </LinearLayout>
