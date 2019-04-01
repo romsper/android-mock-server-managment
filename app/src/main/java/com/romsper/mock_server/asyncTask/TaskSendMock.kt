@@ -2,7 +2,6 @@ package com.romsper.mock_server.asyncTask
 
 import android.os.AsyncTask
 import com.romsper.mock_server.`interface`.IResponseResult
-import com.romsper.mock_server.api.MockServerApi
 import com.romsper.mock_server.network.Retrofit
 import com.romsper.mock_server.pojo.CreateMock
 import okhttp3.ResponseBody
@@ -10,7 +9,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class SendMockAsyncTask(val resultListener: IResponseResult) : AsyncTask<SendMockAsyncTask.Params, Void, Void>() {
+class TaskSendMock(val resultListener: IResponseResult) : AsyncTask<TaskSendMock.Params, Void, Void>() {
 
     override fun doInBackground(vararg params: Params): Void? {
         val spec = params[0]
@@ -20,7 +19,7 @@ class SendMockAsyncTask(val resultListener: IResponseResult) : AsyncTask<SendMoc
         mock.enqueue(object : Callback<ResponseBody> {
             override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
                 when (response.code()) {
-                    in 200..299 -> resultListener.onSuccess(response.code())
+                    in 200..299 -> resultListener.onSuccess(response.code(), response.body()!!.string())
                     in 400..499 -> resultListener.onError(response.code())
                 }
             }
@@ -29,7 +28,6 @@ class SendMockAsyncTask(val resultListener: IResponseResult) : AsyncTask<SendMoc
                 resultListener.onFailure(t.localizedMessage)
             }
         })
-
         return null
     }
 

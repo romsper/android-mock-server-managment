@@ -13,9 +13,9 @@ open class BodyRequest(
     var secure: Boolean?
 )
 
-class BodySend: BodyRequest(
-    method = "",
-    path = "",
+class BodyTool: BodyRequest(
+    method = null,
+    path = null,
     keepAlive = null,
-    secure = false
+    secure = null
 )

@@ -3,7 +3,7 @@
           xmlns:tools="http://schemas.android.com/tools" package="com.romsper.mock_server">
 
     <uses-permission android:name="android.permission.INTERNET" />
-
+    <!--allowBackup will make backup to Google Cloud-->
     <application
             android:allowBackup="true"
             android:icon="@mipmap/ic_launcher"

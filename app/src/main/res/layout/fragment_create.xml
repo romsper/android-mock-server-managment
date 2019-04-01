@@ -17,7 +17,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="start"
                 android:layout_weight="1"
-                android:text="Is mock secure:"/>
+                android:text="@string/str_secure_mock"/>
 
         <Switch
                 android:id="@+id/switch_secure"
@@ -44,7 +44,7 @@
                 android:id="@+id/input_path"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="URL path"/>
+                android:hint="@string/str_path"/>
 
     </LinearLayout>
 
@@ -55,7 +55,7 @@
             android:layout_weight="1"
             android:inputType="textMultiLine"
             android:gravity="top"
-            android:hint="Mock body"/>
+            android:hint="@string/str_input_mock"/>
 
     <Button
             android:id="@+id/btn_send_mock"
@@ -63,6 +63,6 @@
             android:layout_height="wrap_content"
             android:background="@drawable/button_radius"
             android:textColor="@color/colorAccent"
-            android:text="SEND"/>
+            android:text="@string/str_send"/>
 
 </LinearLayout>

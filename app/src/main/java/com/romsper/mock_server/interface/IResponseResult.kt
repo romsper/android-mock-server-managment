@@ -2,7 +2,7 @@ package com.romsper.mock_server.`interface`
 
 interface IResponseResult {
 
-    fun onSuccess(code: Int) {}
+    fun onSuccess(code: Int, body: String) {}
 
     fun onError(code: Int) {}
 

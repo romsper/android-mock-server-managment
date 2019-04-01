@@ -18,12 +18,15 @@ interface MockServerApi {
     fun verifySequence(@Body body: Any): Call<ResponseBody>
 
     @PUT("clear")
-    fun reset(@Body body: Any): Call<ResponseBody>
+    fun clear(@Body body: Any): Call<ResponseBody>
+
+    @PUT("reset")
+    fun reset(): Call<ResponseBody>
 
     @PUT("retrieve")
     fun retrieve(@Body body: Any,
-                 @Query ("format") format: String,
-                 @Query ("type") type: String): Call<ResponseBody>
+                 @Query ("type") type: String,
+                 @Query ("format") format: String?): Call<ResponseBody>
 
     @PUT("status")
     fun status(): Call<ResponseBody>

@@ -5,7 +5,7 @@
               android:layout_height="match_parent"
               android:orientation="vertical"
               android:padding="20dp"
-              tools:context=".fragment.FragmentTool">
+              tools:context=".fragment.FragmentControl">
 
     <LinearLayout
             android:layout_width="match_parent"
@@ -14,7 +14,7 @@
             android:weightSum="2">
 
         <Spinner
-                android:id="@+id/spinner_tool"
+                android:id="@+id/spinner_control"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="start"
@@ -22,19 +22,19 @@
                 android:entries="@array/utilList"/>
 
         <Button
-                android:id="@+id/btn_send_tool"
+                android:id="@+id/btn_send_control"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"
                 android:layout_weight="1"
                 android:background="@drawable/button_radius"
                 android:textColor="@color/colorAccent"
-                android:text="SEND"/>
+                android:text="@string/str_send"/>
 
     </LinearLayout>
 
     <LinearLayout
-            android:id="@+id/block_param_tool"
+            android:id="@+id/block_param_control"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -50,10 +50,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="FORMAT"/>
+                    android:text="@string/str_format"/>
 
             <android.support.v7.widget.AppCompatSpinner
-                    android:id="@+id/spinner_format_tool"
+                    android:id="@+id/spinner_format_control"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -72,10 +72,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="TYPE"/>
+                    android:text="@string/str_type"/>
 
             <Spinner
-                    android:id="@+id/spinner_type_tool"
+                    android:id="@+id/spinner_type_control"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -87,7 +87,7 @@
     </LinearLayout>
 
     <LinearLayout
-            android:id="@+id/body_block"
+            android:id="@+id/block_body_control"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -101,10 +101,10 @@
             <TextView
                     android:layout_width="70dp"
                     android:layout_height="wrap_content"
-                    android:text="PATH"/>
+                    android:text="@string/str_path"/>
 
             <android.support.design.widget.TextInputEditText
-                    android:id="@+id/input_path_tool"
+                    android:id="@+id/input_path_control"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:entries="@array/formatList"/>
@@ -121,10 +121,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="METHOD"/>
+                    android:text="@string/str_method"/>
 
             <Spinner
-                    android:id="@+id/spinner_method_tool"
+                    android:id="@+id/spinner_method_control"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -135,14 +135,21 @@
 
     </LinearLayout>
 
-    <TextView
-            android:id="@+id/txt_response_body"
+    <ScrollView
             android:layout_marginTop="10dp"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"
-            android:minLines="15"
-            android:singleLine="false"
-            android:scrollHorizontally="true"/>
+            android:layout_weight="1">
+
+        <TextView
+                android:id="@+id/txt_response_body"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minLines="15"
+                android:singleLine="false"
+                android:scrollHorizontally="true"/>
+
+    </ScrollView>
+
 
 </LinearLayout>

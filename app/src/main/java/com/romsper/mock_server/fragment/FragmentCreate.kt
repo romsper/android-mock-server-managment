@@ -14,12 +14,12 @@ import android.widget.Toast
 import com.romsper.mock_server.R
 import com.romsper.mock_server.`interface`.IResponseResult
 import com.romsper.mock_server.`interface`.IServerInput
-import com.romsper.mock_server.asyncTask.SendMockAsyncTask
+import com.romsper.mock_server.asyncTask.TaskSendMock
 import com.romsper.mock_server.pojo.CreateMock
 
 
 class FragmentCreate : Fragment(), IResponseResult {
-    lateinit var sendMockAsyncTask: SendMockAsyncTask
+    lateinit var sendMockAsyncTask: TaskSendMock
 
     lateinit var serverHost: String
     lateinit var switchSecure: Switch
@@ -29,7 +29,8 @@ class FragmentCreate : Fragment(), IResponseResult {
     lateinit var btnSendMock: Button
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
+    ): View? {
         return inflater.inflate(R.layout.fragment_create, container, false)
     }
 
@@ -52,9 +53,9 @@ class FragmentCreate : Fragment(), IResponseResult {
                 httpRequest.path = inputPath.text.toString()
                 httpResponse.body = inputMockBody.text.toString()
             }
-            val params = SendMockAsyncTask.Params(mock, serverHost)
+            val params = TaskSendMock.Params(mock, serverHost)
 
-            sendMockAsyncTask = SendMockAsyncTask(this)
+            sendMockAsyncTask = TaskSendMock(this)
             sendMockAsyncTask.execute(params)
         }
     }
@@ -64,8 +65,8 @@ class FragmentCreate : Fragment(), IResponseResult {
         sendMockAsyncTask.cancel(true)
     }
 
-    override fun onSuccess(code: Int) {
-        super.onSuccess(code)
+    override fun onSuccess(code: Int, body: String) {
+        super.onSuccess(code, body)
 
         Toast.makeText(
             activity!!.applicationContext,

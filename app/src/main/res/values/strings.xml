@@ -3,6 +3,14 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="str_send">SEND</string>
+    <string name="str_format">FORMAT</string>
+    <string name="str_type">TYPE</string>
+    <string name="str_path">PATH</string>
+    <string name="str_method">METHOD</string>
+    <string name="str_secure_mock">Secure mock:</string>
+    <string name="str_server_host">http://0.0.0.0:1080/</string>
+    <string name="str_input_mock">Input mock body</string>
 
     <string-array name="httpMethodList">
         <item>GET</item>
@@ -13,13 +21,13 @@
     </string-array>
 
     <string-array name="utilList">
-        <item>VERIFY</item>
-        <item>VERIFY_SEQUENCE</item>
+        <!--<item>VERIFY</item>-->
+        <!--<item>VERIFY_SEQUENCE</item>-->
+        <item>RETRIEVE</item>
         <item>CLEAR</item>
         <item>RESET</item>
-        <item>RETRIEVE</item>
         <item>STATUS</item>
-        <item>BIND</item>
+        <!--<item>BIND</item>-->
         <item>STOP</item>
     </string-array>
 
